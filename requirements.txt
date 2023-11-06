@@ -1,0 +1,5 @@
+warnings
+openai
+pyttsx3
+whisper-mic
+pyaudio
