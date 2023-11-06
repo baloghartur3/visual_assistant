@@ -39,7 +39,7 @@ def chat_with_gpt(user_message, messages=[]):
 mic = WhisperMic(english=True)
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id) #change index to change voices
+engine.setProperty('voice', voices[0].id) #change index to change voices
 engine.setProperty('rate', 150)  # Speed of speech
 engine.setProperty('volume', 1.0)  # Volume (0.0 to 1.0)
 conversation = []  # Initialize the conversation outside the loop
@@ -53,7 +53,7 @@ while True:
         # Check for the wake word
         if wake_word_detector.start_detection():
             print("Jarvis: Yes master?")  # Modify the print statement
-            engine.say("Yes master? aaaahhhhhhhhaaaaaahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+            engine.say("Yes master?")
             engine.runAndWait()
             # Capture audio input
             result = mic.listen()
